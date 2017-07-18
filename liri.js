@@ -100,7 +100,7 @@ function omdB(movie){
 	} else {
 		request('http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&tomatoes=true&r=json', function (error, response, body) {
 			if(!error && response.statusCode == 200) {
-				var info = JSON.parse(body)
+				var info = JSON.parse(body);
 				console.log("\n---------------------\n");
 				console.log("Title: " + info.Title);
 				console.log("Starring: " + info.Actors + "\n");
@@ -133,7 +133,7 @@ function doWhatItSays(){
 // Function to console.log results in Terminal and Append to console.log.txt
 function log(data){
 	console.log(data);
-	fs.appendFile('assets/text-files/log.txt', data, 'utf8', function(error) {
+	fs.appendFile('./log.txt', data, 'utf8', function(error) {
 		if (error) {
 			console.log('Error occurred' + error);
 		}
