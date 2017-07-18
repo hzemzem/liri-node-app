@@ -22,7 +22,7 @@ function liri(command, action){
 
 //Twitter API Function
 function twitter(handle){
-	if (!handle){
+	if (handle === ""){
 		handle = 'gigicasablanca';
 	}
 	var client = new Twitter({
@@ -48,7 +48,7 @@ function twitter(handle){
 
 //Spotify API Function
 function spotify(song){
-	if (!song) {
+	if (song === "") {
 		song = 'Whats my age again';
 	};
 
@@ -78,7 +78,7 @@ function spotify(song){
 function omdB(movie){
 	if(!movie){
 		movie = 'Mr. Nobody'
-		request('http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&tomatoes=true&r=json', function (error, response, body) {
+		request("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece", function (error, response, body) {
 		if(!error && response.statusCode == 200) {
 			var info = JSON.parse(body);
 			console.log("\n---------------------\n");
@@ -98,7 +98,7 @@ function omdB(movie){
 	});
 		
 	} else {
-		request('http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&tomatoes=true&r=json', function (error, response, body) {
+		request("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece", function (error, response, body) {
 			if(!error && response.statusCode == 200) {
 				var info = JSON.parse(body);
 				console.log("\n---------------------\n");
